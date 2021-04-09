@@ -36,6 +36,14 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 Be nice, and don't be like this guy: [Click Here](https://github.com/christopher-talke/node-express-puppeteer-pdf-example/issues/4)
 
+## Author
+
+[@Christopher Talke ](https://github.com/christopher-talke)
+
+## Contributors
+
+[@TMInnovations](https://github.com/TMInnovations)
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
