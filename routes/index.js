@@ -1,22 +1,23 @@
 const express = require("express");
 const router = express.Router();
-const saveToPdf = require("../controller/safeToPdf");
+const generatePdf = require("../controller/generatePdf");
 
 // Home Page
-router.get("/", (_, res, __) => {
-  res.send(
-    `This is a printable PDF document, here is some good info about designing for print: <a href="https://www.smashingmagazine.com/2015/01/designing-for-print-with-css">Click Here</a>! 
-    <p>
-    <a href="/generate-pdf?url=http://localhost:3000">Click here to print this page!`
-  );
+router.get("/", (_, res) => {
+  res.sendFile("index.html");
 });
 
 // Download PDF Route
-router.get("/generate-pdf", async (req, res, __) => {
-  let result = await saveToPdf(req.query.url);
+router.get("/generate-pdf", async (req, res) => {
+  let result = await generatePdf(req.query.url);
   res.attachment(`node-express-puppeteer-pdf-example.pdf`);
   res.contentType("application/pdf");
   res.send(result);
+});
+
+// Catch All
+router.get("*", (req, res) => {
+  res.redirect("/");
 });
 
 module.exports = router;

@@ -1,9 +1,9 @@
 const puppeteer = require("puppeteer");
 
-const saveToPdf = async url => {
+const generatePdf = async (url) => {
   // Browser actions & buffer creator
   const browser = await puppeteer.launch({
-    args: ["--no-sandbox", "--disable-setuid-sandbox"] // SEE BELOW WARNING!!!
+    args: ["--no-sandbox", "--disable-setuid-sandbox"], // SEE BELOW WARNING!!!
   });
   const page = await browser.newPage();
   await page.goto(url);
@@ -22,4 +22,4 @@ const saveToPdf = async url => {
 
 ******************** WARNING ********************* WARNING ********************* WARNING *********************/
 
-module.exports = saveToPdf;
+module.exports = generatePdf;
