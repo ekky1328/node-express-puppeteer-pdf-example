@@ -6,7 +6,7 @@ This is a Docker example of using Puppeteer to Generate PDF Documents.
 
 ## Installation / Development Setup
 
-Clone the repository, move into the directory, install all NPM Deps, and open the only editor your should be using **_cough_** VSCode **_cough_**
+Clone the repository, move into the directory, install all NPM Deps, and open the only editor you should be using **_cough_** VSCode **_cough_**
 
 ```bash
 git clone https://github.com/christopher-talke/node-express-puppeteer-pdf-example.git
