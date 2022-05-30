@@ -6,7 +6,11 @@ const generatePdf = async (url) => {
     args: ["--no-sandbox", "--disable-setuid-sandbox"], // SEE BELOW WARNING!!!
   });
   const page = await browser.newPage();
-  await page.goto(url);
+  try{
+    await page.goto(url);    
+  } catch(e) {
+    console.error(e);
+  }
   const pdf = await page.pdf();
   await browser.close();
   // Return Buffer
