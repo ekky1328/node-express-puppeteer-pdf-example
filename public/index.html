@@ -38,6 +38,24 @@
       <br />
       <small>This will not show up in the Generated PDF Document.</small>
     </div>
+    
+    <hr />
+    <div class="print-hide">
+      <h2>Send HTML as Base64, and get a PDF output!</h2>
+      <form action="/generate-pdf" method="post">
+        <label for="filename">Filename</label><br/>
+        <small>Enter a filename, the following characters will work. [a-z, A-Z, 0-9, _, -]</small><br/>
+        <input id="filename" name="filename" type="text"><br/>
+        <br/>
+
+        <label for="filename">Payload</label><br/>
+        <small>Enter your Base64 encoded payload, don't have Base64? Try this <a href="https://www.base64encode.org/" target="_blank" rel="noopener noreferrer">tool</a>!</small><br/>
+        <input id="content" name="content" type="text"><br/>
+        <br/>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
   </body>
   <script>
     document.addEventListener("DOMContentLoaded", function () {

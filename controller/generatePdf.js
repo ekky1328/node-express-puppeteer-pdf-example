@@ -1,16 +1,29 @@
 const puppeteer = require("puppeteer");
 
-const generatePdf = async (url) => {
+const generatePdf = async (type, payload) => {
   // Browser actions & buffer creator
   const browser = await puppeteer.launch({
     args: ["--no-sandbox", "--disable-setuid-sandbox"], // SEE BELOW WARNING!!!
   });
-  const page = await browser.newPage();
-  await page.goto(url);
-  const pdf = await page.pdf();
-  await browser.close();
-  // Return Buffer
-  return pdf;
+
+  if (type === 'url') {
+    const page = await browser.newPage();
+    await page.goto(payload);
+    const pdf = await page.pdf();
+    await browser.close();
+    // Return Buffer
+    return pdf;
+  }
+
+  if (type === 'base64') {
+    const page = await browser.newPage();
+    await page.goto(`data:text/html;base64,${payload}`);
+    const pdf = await page.pdf();
+    await browser.close();
+    // Return Buffer
+    return pdf;
+  }
+
 };
 
 /******************** WARNING ********************* WARNING ********************* WARNING *********************
