@@ -1,6 +1,9 @@
 # Puppeteer PDF Example
 
-This is a Docker example of using Puppeteer to Generate PDF Documents.
+This is a Docker example of using Puppeteer to Generate PDF Documents, there are some bonus stuff in this that could be adjusted to be really useful:
+
+- Base64 to HTML PDF Generation
+- Route Protection with API
 
 ![Animated example of this app](/public/example.gif)
 
@@ -8,7 +11,7 @@ This is a Docker example of using Puppeteer to Generate PDF Documents.
 
 I've created a image for this example that can be found here [https://hub.docker.com/r/ctalke/node-express-puppeteer](https://hub.docker.com/r/ctalke/node-express-puppeteer).
 
-```bash
+```
 docker pull ctalke/node-express-puppeteer
 docker run -d -p 3000:3000 --restart unless-stopped ctalke/node-express-puppeteer
 ```
@@ -17,7 +20,7 @@ docker run -d -p 3000:3000 --restart unless-stopped ctalke/node-express-puppetee
 
 Clone the repository, move into the directory, install all NPM Deps, and then crack open your editor.
 
-```bash
+```
 git clone https://github.com/christopher-talke/node-express-puppeteer-pdf-example.git
 cd node-expess-puppeteer-pdf-example
 npm i
@@ -26,7 +29,7 @@ code .
 
 To run the application in development, just run this command:
 
-```bash
+```
 npm run dev
 ```
 
@@ -34,9 +37,9 @@ The Express application will open on `https://localhost:3000`
 
 ## Docker Build
 
-```bash
-docker build -t puppeteerInDocker .
-docker run -p 3000:3000 puppeteerInDocker
+```
+docker build -t puppeteer_in_docker .
+docker run -p 3000:3000 puppeteer_in_docker
 ```
 
 ## Contributing
