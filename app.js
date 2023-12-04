@@ -23,12 +23,15 @@ app.use((req, res, next) => {
             next()
             return;
         }
+        res.statusCode = 401;
+        res.json({
+            message: 'not_authorised_to_use_api'
+        })
+    }
+    else {
+      next();
     }
 
-    res.statusCode = 401;
-    res.json({
-        message: 'not_authorised_to_use_api'
-    })
     return;
 });
 
